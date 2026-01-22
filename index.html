@@ -1,235 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PlowAfrika | Under Maintenance</title>
+  <!-- BASIC META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlowAfrika</title>
 
-  <style>
-    :root {
-      --bg: #f4faf6;
-      --card: #ffffff;
-      --text: #0f3d2e;
-      --muted: #4f6f64;
-      --accent: #2f7d57;
-    }
+  <!-- SEO META -->
+  <meta name="description" content="PlowAfrika empowers Africa’s smallholder farmers with AI-powered advisory, input credits, market access, and digital tools to boost productivity and income.">
+  <meta name="keywords" content="Agrotech, Africa, Smallholder Farmers, Agriculture, AI Farming, PlowAfrika">
+  <meta name="author" content="PloughAfrika">
 
-    body.dark {
-      --bg: #0e1f1a;
-      --card: #132e25;
-      --text: #e6f4ee;
-      --muted: #9fc3b5;
-    }
+  <!-- FAVICON -->
+  <link rel="icon" href="images/vector.svg">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--card);
-      border: none;
-      padding: .5rem .7rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .maintenance {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 3rem 1.5rem;
-    }
-
-    .content {
-      max-width: 720px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .logo {
-      max-width: 140px;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 1rem;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    /* Loader */
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 4px solid var(--accent);
-      border-top-color: transparent;
-      border-radius: 50%;
-      margin: 0 auto 2rem;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Countdown */
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-    }
-
-    .countdown div {
-      background: var(--card);
-      padding: 1rem;
-      border-radius: 12px;
-      min-width: 75px;
-    }
-
-    .countdown span {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .countdown small {
-      font-size: .75rem;
-      color: var(--muted);
-    }
-
-    /* Notify form */
-    .notify-form {
-      display: flex;
-      gap: .5rem;
-      max-width: 420px;
-      margin: 0 auto 2rem;
-      flex-wrap: wrap;
-    }
-
-    .notify-form input {
-      flex: 1;
-      padding: .75rem;
-      border-radius: 8px;
-      border: 1px solid #d5e2dc;
-    }
-
-    .notify-form button {
-      padding: .75rem 1.2rem;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .contact {
-      font-size: .85rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      font-size: .75rem;
-      color: var(--muted);
-    }
-  </style>
+  <!-- FONT WESOME LINK-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <button class="theme-toggle" id="themeToggle">🌙</button>
-
-  <main class="maintenance">
-
-    <div class="content">
-      <!-- Replace with your logo -->
-      <img src="images/LogoBG.png" alt="PlowAfrika Logo" class="logo" />
-
-      <div class="loader"></div>
-
-      <h1>We’ll Be Back Soon</h1>
-      <p class="subtitle">
-        PlowAfrika is undergoing scheduled maintenance as we improve our
-        platform for farmers and partners across Africa.
-      </p>
-
-      <!-- Countdown -->
-      <div class="countdown">
-        <div><span id="days">00</span><small>Days</small></div>
-        <div><span id="hours">00</span><small>Hours</small></div>
-        <div><span id="minutes">00</span><small>Minutes</small></div>
-        <div><span id="seconds">00</span><small>Seconds</small></div>
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/LogoBG.png" alt="PlowAfrika Logo">
+        </a>
       </div>
 
-      <!-- Notify -->
-      <form class="notify-form">
-        <input type="email" placeholder="Enter your email" required />
-        <button type="submit">Notify Me</button>
-      </form>
+      <!-- Hamburger Menu (Mobile) -->
+      <div class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-      <div class="contact">
-        <p>Email: hello@plowafrika.com</p>
-        <p>Email: partners@plowafrika.com</p>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="html/about.html">About</a></li>
+        <li><a href="html/farmwiser.html">FarmWiser</a></li>
+        <li><a href="html/impact.html">Impact</a></li>
+        <li><a href="html/contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Call-to-Action -->
+      <div class="nav-cta">
+        <a href="html/farmwiser.html" class="btn-primary">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+
+    <!-- DESKTOP / TABLET: Animated Background Slider -->
+    <div class="hero-bg">
+      <div class="slide" style="background-image: url('images/inclusive.webp');"></div>
+      <div class="slide" style="background-image: url('images/MoU.webp');"></div>
+      <div class="slide" style="background-image: url('images/CS-Eng.webp');"></div>
+      <div class="slide" style="background-image: url('images/onboard.webp');"></div>
+    </div>
+
+    <!-- MOBILE: Static Background Fallback -->
+    <div class="hero-bg-mobile"></div>
+
+    <!-- Content Overlay -->
+    <div class="hero-container">
+      <div class="hero-content fade-up">
+
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            Empowering Africa’s Smallholder Farmers to Thrive
+          </h1>
+
+          <p class="hero-subheading fade-up fade-up-delay-1">
+            PlowAfrika supports farmers with AI-powered advisory, input credits,
+            market access, and digital tools to boost productivity, resilience,
+            and income.
+          </p>
+        </div>
+
+        <div class="hero-cta-group fade-up fade-up-delay-2">
+          <a href="html/contact.html" class="btn btn-primary">Partner With Us</a>
+          <a href="html/farmwiser.html" class="btn btn-outline">Explore FarmWiser</a>
+        </div>
+
       </div>
     </div>
 
-    <footer>
-      © <span id="year"></span> PlowAfrika. All rights reserved.
-    </footer>
+  </section>
+
+
+
+
+    <!-- VALUE PROPOSITION & WHO WE SERVE -->
+    <section class="section value-prop" id="value-prop">
+
+      <div id="value-container">
+
+        <!-- LEFT: VALUE PROPOSITION -->
+        <div id="value-column" class="fade-up">
+          <h2>Building Smarter, Fairer Agricultural Systems</h2>
+          <p>
+            PlowAfrika is an agritech innovator on a mission to help Africa’s smallholder farmers thrive. We use smart technology to give farmers easy-to-follow advice, helping them grow more crops and make better decisions.
+
+            We also provide affordable loans for seeds, fertilizers, and tools, so farmers can get what they need without stress. On top of that, we connect farmers to reliable markets, making sure they get fair prices for their produce.
+
+            With hands-on support from our local teams, farmers get the guidance they need every step of the way. By combining technology, finance, and local help, PlowAfrika boosts yields, income, and long-term resilience, creating stronger, sustainable farming communities across Africa.
+          </p>
+        </div>
+
+        <!-- RIGHT: WHO WE SERVE -->
+        <div id="serve-column" class="fade-up fade-up-delay-1">
+          <h2>Who We Serve</h2>
+
+          <div id="whoCrd">
+
+            <div class="serve-card fade-up fade-up-delay-1">
+              <div class="serve-icon">
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+              </div>
+              <h3>Smallholder Farmers</h3>
+              <p>Individual farmers and family farms across rural Africa</p>
+            </div>
+
+            <div class="serve-card fade-up fade-up-delay-2">
+              <div class="serve-icon">
+                <i class="fa-solid fa-users-rectangle" aria-hidden="true"></i>
+              </div>
+              <h3>Farmer Groups &amp; Cooperatives</h3>
+              <p>Organized groups seeking collective strength and better bargaining power</p>
+            </div>
+
+            <div class="serve-card fade-up fade-up-delay-3">
+              <div class="serve-icon">
+                <i class="fa-solid fa-store" aria-hidden="true"></i>
+              </div>
+              <h3>Agribusinesses &amp; Buyers</h3>
+              <p>Processors, exporters, and retailers seeking traceable, quality produce</p>
+            </div>
+
+            <div class="serve-card fade-up fade-up-delay-3">
+              <div class="serve-icon">
+                <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+              </div>
+              <h3>Development Partners &amp; NGOs</h3>
+              <p>Organizations focused on food security, climate resilience, and rural development</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOLUTIONS PREVIEW / KEY BENEFITS -->
+    <section class="section solutions-prev" id="solutions-prev">
+
+      <h2 class="fade-up">Key Benefits</h2>
+
+      <div id="benefits">
+
+        <div class="bcard fade-up fade-up-delay-1">
+          <div class="ben-icon">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+          </div>
+          <h3>AI-Powered Advisor</h3>
+          <p>AI-powered advisory tailored to local crops, weather, and soil conditions</p>
+        </div>
+
+        <div class="bcard fade-up fade-up-delay-2">
+          <div class="ben-icon">
+            <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+          </div>
+          <h3>Access to Credits</h3>
+          <p>Access to input credits using data-driven credit assessments</p>
+        </div>
+
+        <div class="bcard fade-up fade-up-delay-3">
+          <div class="ben-icon">
+            <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+          </div>
+          <h3>Market Linkage</h3>
+          <p>Guaranteed market linkages and buyer connections</p>
+        </div>
+
+        <div class="bcard fade-up fade-up-delay-3">
+          <div class="ben-icon">
+            <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+          </div>
+          <h3>Agent Support</h3>
+          <p>On-ground agent support for farmers without smartphones</p>
+        </div>
+
+        <div class="bcard fade-up fade-up-delay-3">
+          <div class="ben-icon">
+            <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+          </div>
+          <h3>End-to-End Support</h3>
+          <p>End-to-end support from planting to harvest and sales</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPACT SNAPSHOT -->
+    <section class="section impact-snapshot" id="impact-snapshot">
+
+      <div class="statCard fade-up">
+        <h1>5,000+</h1>
+        <span>Farmers Engaged</span>
+      </div>
+
+      <div class="statCard fade-up fade-up-delay-1">
+        <h1>100+</h1>
+        <span>Farmer Groups</span>
+      </div>
+
+      <div class="statCard fade-up fade-up-delay-2">
+        <h1>1,000+</h1>
+        <span>Hectares Reached</span>
+      </div>
+
+    </section>
+
+
+    <!-- CTA & OUR PARTNERS / ECOSYSTEM -->
+    <section class="section cta-section" id="cta">
+
+      <!-- CTA BLOCK -->
+      <div id="homeCta" class="fade-up">
+        <h3>Ready to scale and impact together?</h3>
+        <p>
+          We are transforming African agriculture through technology, innovation,
+          and inclusive systems.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#partner" class="btn btn-primary">Partner With Us</a>
+        </div>
+      </div>
+
+      <!-- PARTNERS / ECOSYSTEM -->
+      <div id="disPartners" class="fade-up fade-up-delay-1">
+        <h3>Our Partners &amp; Ecosystem</h3>
+
+        <div id="prtBox">
+          <div class="prtImg fade-up fade-up-delay-1">
+            <img src="images/NAERLS.jpeg" alt="National Agricultural Extension and Research Liaison Services (NAERLS) logo">
+          </div>
+          <div class="prtImg fade-up fade-up-delay-2">
+            <img src="images/IWA.jpeg" alt="impact Works Africa logo">
+          </div>
+          <div class="prtImg fade-up fade-up-delay-3">
+            <img src="images/societal.jpeg" alt="Societal Lens Initiative logo">
+          </div>
+          <div class="prtImg fade-up fade-up-delay-3">
+            <img src="images/sprout.jpeg" alt="Sprout logo">
+          </div>
+          <div class="prtImg fade-up fade-up-delay-3">
+            <img src="images/logo1.png" alt="Partner logo">
+          </div>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 
-  <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Contact -->
+        <div class="footer-column contact-column" id="contact">
+          <h3>Contact Us</h3>
+          <ul id="mails" class="contact-list">
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>For Enquiries:</span>
+                <a href="mailto:hello@plowafrika.com">hello@plowafrika.com</a>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>For Partnerships:</span>
+                <a href="mailto:partnerships@plowafrika.com">partnerships@plowafrika.com</a>
+              </div>
+            </li>
+            <li>
+            <li>
+              <i class="fa-solid fa-map-location-dot"></i>
+              <div>
+                <span>Location:</span>
+                <span>Nigeria <small>(Operations across multiple farming communities)</small></span>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-    // Countdown target date (EDIT THIS)
-    const targetDate = new Date("2026-01-20T00:00:00").getTime();
+        <!-- Column 2: Quick Links -->
+        <div class="footer-column" id="quick-links">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="html/about.html">About</a></li>
+            <li><a href="html/farmwiser.html">FarmWiser</a></li>
+            <li><a href="html/impact.html">Impact</a></li>
+            <li><a href="html/contact.html">Contact</a></li>
+          </ul>
+        </div>
 
-    setInterval(() => {
-      const now = new Date().getTime();
-      const diff = targetDate - now;
-      if (diff <= 0) return;
+        <!-- Column 3: Follow Us -->
+        <div class="footer-column" id="social">
+          <h3>Follow Us</h3>
+          <ul class="social-icons">
+            <li>
+              <a href="https://x.com/plowafrika" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <i class="fab fa-x-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/plowafrika" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/plowafrika" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      document.getElementById("days").textContent =
-        Math.floor(diff / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").textContent =
-        Math.floor((diff / (1000 * 60 * 60)) % 24);
-      document.getElementById("minutes").textContent =
-        Math.floor((diff / (1000 * 60)) % 60);
-      document.getElementById("seconds").textContent =
-        Math.floor((diff / 1000) % 60);
-    }, 1000);
+    <div class="footer-bottom">
+      <p>&copy; 2026 PlowAfrika. All rights reserved.</p>
+    </div>
+  </footer>
 
-    // Dark mode toggle
-    document.getElementById("themeToggle").onclick = () => {
-      document.body.classList.toggle("dark");
-    };
-  </script>
 
+<script defer src="assets/main.js"></script>
 </body>
 </html>
-
