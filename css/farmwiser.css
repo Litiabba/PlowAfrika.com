@@ -352,7 +352,7 @@ main {
           rgba(15, 62, 31, 0.171) 100%     /* fully transparent near top */
         ),
         /* Your background image */
-        url('../images/onboard.JPG');   /* ← replace with your real image */
+        url('../images/onboard.webp');   /* ← replace with your real image */
 
       background-size: cover;
       background-position: center 60%;   /* slightly higher focus if people are in lower part */
